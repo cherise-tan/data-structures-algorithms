@@ -1,10 +1,15 @@
-# data-structures-algorithms
+#data-structures-algorithms
 Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://www.udemy.com/coding-interview-bootcamp-algorithms-and-data-structure) course.
 
 * Uses Jest to run tests for each exercise
-  * Navigate into the 'exercises' directory and type ```jest <challenge-folder>/test.js --watch``` into the command line terminal
+  * Navigate to the 'exercises' directory and type ```jest <challenge-folder>/test.js --watch``` into the command terminal
+* Debugger statements
 
-### Reverse String
+## Problems
+* [Reverse String](#Reverse-String)
+
+
+###Reverse String
 * Use the array reverse() helper function to reverse places in an array
   * Convert the string into an array
   * Call 'reverse' method on the array
