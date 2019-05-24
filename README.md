@@ -1,4 +1,4 @@
-#data-structures-algorithms
+# data-structures-algorithms
 Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://www.udemy.com/coding-interview-bootcamp-algorithms-and-data-structure) course.
 
 * Uses Jest to run tests for each exercise
@@ -9,7 +9,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 * [Reverse String](#Reverse-String)
 
 
-###Reverse String
+### Reverse String
 * Use the array reverse() helper function to reverse places in an array
   * Convert the string into an array
   * Call 'reverse' method on the array
