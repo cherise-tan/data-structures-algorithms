@@ -4,10 +4,18 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 * Uses Jest to run tests for each exercise
   * Navigate to the 'exercises' directory and type ```jest <challenge-folder>/test.js --watch``` into the command terminal
 * Debugger statements
+  * Any time you want to analyse a particular point in the code, can place a ```debugger;``` statement
+  * It will pause in execution, allowing you to inspect the different variables
+  * If this statement is present, will need to manually call the function: e.g. ```reverse("asdf");```
+  * Then run in debugger mode -> in the command terminal: ```node inspect index.js```
+  * To run code line-by-line, need to enter: ```cont``` or ```c```
+  * To inspect a variable, need to enter REPL mode: ```repl```
+  * In the new menu, can type variables you want to inspect - e.g. ```str```, or copy over some code to run
+  * Ctrl-C will exit REPL mode
+  * To continue running code after the debugger statement, just type ```c```
 
 ## Problems
 * [Reverse String](#Reverse-String)
-
 
 ### Reverse String
 * Use the array reverse() helper function to reverse places in an array
