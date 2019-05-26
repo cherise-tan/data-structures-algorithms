@@ -16,17 +16,22 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 
 ## Problems
 * [Palindromes](#Palindromes)
+* [Reverse Int](#Reverse-Int)
 * [Reverse String](#Reverse-String)
 
 ### Palindromes
 * Reverse the string and then compare input and output
-  * [Reverse String](#Reverse-String)
   * Test if input string is equal to output string: ```return str === reversed;``` (doesn't need an if statement)
 * Use the array every() helper function
   * Turn string into an array
   * The every() function does a boolean check on every element within an array
   * Compare each element (at position "i") to the element at position ```array.length -i -1```
     * NB: "-1" accounts for array starting at position 0)
+
+### Reverse Int
+* Change the int to a string, then reverse the string, then change the string back into an int
+* Use Math.sign() to maintain negative/positive numbers
+  * Returns +1 if number is positive, and -1 if number is negative
 
 ### Reverse String
 * Use the array reverse() helper function to reverse places in an array
