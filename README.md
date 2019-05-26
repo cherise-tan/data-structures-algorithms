@@ -15,9 +15,22 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * To continue running code after the debugger statement, just type ```c```
 
 ## Problems
+* [Max Chars]((#Max-Chars)) (most common character, anagram, any repeated characters)
 * [Palindromes](#Palindromes)
 * [Reverse Int](#Reverse-Int)
 * [Reverse String](#Reverse-String)
+
+### Max Chars
+* Use this technique for the following questions:
+  * What is the most common character in the string?
+  * Does string A have the same characters as string B (is it an anagram)?
+  * Does the string have any repeated characters in it?
+* Can solve these problems by creating an object
+  * First need to define a new object
+  * Then need to iterate through each character in the string, and add each unique characters into this object -> using a FOR-OF loop
+    * The object 'key' will be the character in the string, the object 'property' will be +1
+  * Then need to iterate through the object to find the character that has been used the most -> using a FOR-IN loop
+    * Set max-number and the associated character as variables as we loop through the object
 
 ### Palindromes
 * Reverse the string and then compare input and output
