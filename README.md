@@ -15,7 +15,18 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * To continue running code after the debugger statement, just type ```c```
 
 ## Problems
+* [Palindromes](#Palindromes)
 * [Reverse String](#Reverse-String)
+
+### Palindromes
+* Reverse the string and then compare input and output
+  * [Reverse String](#Reverse-String)
+  * Test if input string is equal to output string: ```return str === reversed;``` (doesn't need an if statement)
+* Use the array every() helper function
+  * Turn string into an array
+  * The every() function does a boolean check on every element within an array
+  * Compare each element (at position "i") to the element at position ```array.length -i -1```
+    * NB: "-1" accounts for array starting at position 0)
 
 ### Reverse String
 * Use the array reverse() helper function to reverse places in an array
