@@ -15,10 +15,15 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * To continue running code after the debugger statement, just type ```c```
 
 ## Problems
+* [Fizzbuzz](#Fizzbuzz)
 * [Max Chars]((#Max-Chars)) (most common character, anagram, any repeated characters)
 * [Palindromes](#Palindromes)
 * [Reverse Int](#Reverse-Int)
 * [Reverse String](#Reverse-String)
+
+### Fizzbuzz
+* Requires use of a for-loop, and if-else statements
+* Remember to start the for loop with ```let i = 1``` and ```i <= n```
 
 ### Max Chars
 * Use this technique for the following questions:
