@@ -15,12 +15,38 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * To continue running code after the debugger statement, just type ```c```
 
 ## Problems
+* [Anagrams](#Anagrams)
 * [Chunk](#Chunk) (array chunking)
 * [Fizzbuzz](#Fizzbuzz)
 * [Max Chars]((#Max-Chars)) (most common character, anagram, any repeated characters)
 * [Palindromes](#Palindromes)
 * [Reverse Int](#Reverse-Int)
 * [Reverse String](#Reverse-String)
+
+### General
+* RegExp (Regular Expressions)
+  * The RegExp constructor creates a regular expression object for matching text with a pattern
+  * They can be used to manipulate strings very easily -> \v matches any alphanumeric character (disregards punctuation/spaces)
+  * ```word.replace(/[^\w]/g, "")``` will replace any other characters found in 'word' with an empty string
+* ```word.toLowerCase()``` will change all characters to lowercase
+* Getting keys out of an object (obj):
+  * ```Object.keys(obj);```
+  * To get the number of keys in an object: ```Object.keys(obj).length;```
+
+### Anagrams
+* 1: Use character maps
+  * Build character maps (can write an external helper function so you don't need to repeat code for strings A + B)
+    * Remove white space/punctuation using Regular Expressions ```word.replace(/[^\w]/g, "")```
+  * Check if the character maps have the same number of keys ```Object.keys(aCharMap).length !== Object.keys(bCharMap).length```
+  * Iterate through the first character map, comparing each key to the corresponding key in the second character map
+    * ```(aCharMap[char] !== bCharMap[char])```
+    * Return as true if all the key:value pairs match
+* 2: Use the array sort() helper function
+  * This will sort characters at runtime (works for both characters and numbers)
+  * Create a helper function which will perform two tasks:
+    * Clean spaces/punctuation, change letters to lowercase
+    * Change string to array, perform sort() function, then change back to a string
+  * Check whether both strings are equal
 
 ### Chunk
 * Solution 1: Using a FOR-OF loop
@@ -38,7 +64,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * While index is less than array.length (WHILE LOOP)
     * Push a slice of length 'size' from 'array' into 'chunked'
     * Add 'size' to 'index'
-  
+
 ### Fizzbuzz
 * Requires use of a for-loop, and if-else statements
 * Remember to start the for loop with ```let i = 1``` and ```i <= n```
@@ -48,6 +74,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * What is the most common character in the string?
   * Does string A have the same characters as string B (is it an anagram)?
   * Does the string have any repeated characters in it?
+
 * Can solve these problems by creating an object
   * First need to define a new object
   * Then need to iterate through each character in the string, and add each unique characters into this object -> using a FOR-OF loop
