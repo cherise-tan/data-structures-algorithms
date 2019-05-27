@@ -16,6 +16,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 
 ## Problems
 * [Anagrams](#Anagrams)
+* [Capitalize](#Capitalize)
 * [Chunk](#Chunk) (array chunking)
 * [Fizzbuzz](#Fizzbuzz)
 * [Max Chars]((#Max-Chars)) (most common character, anagram, any repeated characters)
@@ -32,6 +33,12 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 * Getting keys out of an object (obj):
   * ```Object.keys(obj);```
   * To get the number of keys in an object: ```Object.keys(obj).length;```
+* String split() method
+  * ```str.split(" ")``` will split the string by spaces into individual strings (e.g. "hello","world")
+* String slice() method
+  * ```string.slice(beginIndex, endIndex)``` -> nb 'endIndex' is optional
+  * ```string[0]``` will show only the FIRST character in the string
+  * ```string.slice(1)``` will show only the characters from position ONE onwards
 
 ### Anagrams
 * 1: Use character maps
@@ -47,6 +54,23 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
     * Clean spaces/punctuation, change letters to lowercase
     * Change string to array, perform sort() function, then change back to a string
   * Check whether both strings are equal
+
+### Capitalize
+* 1. Using the string standard library
+  * Make an empty array 'words'
+  * Split the string input by spaces to get an array ```str.split(" ")```
+  * For each word in the array (FOR-OF loop)
+    * Uppercase the first letter of the word
+    * Join first letter with the rest of the string
+    * Push result into 'words' array
+  * Join 'words' into a string and return it ```return words.join(" ");```
+* 2. Using a basic FOR loop
+  * Create 'result' which is the first character of the input string capitalised
+  * For each character in the string:
+    * IF the character to the left is a space
+      * Capitalize it and add it to 'result'
+    * ELSE
+      * Add it to result
 
 ### Chunk
 * Solution 1: Using a FOR-OF loop
