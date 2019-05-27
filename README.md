@@ -15,12 +15,30 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * To continue running code after the debugger statement, just type ```c```
 
 ## Problems
+* [Chunk](#Chunk) (array chunking)
 * [Fizzbuzz](#Fizzbuzz)
 * [Max Chars]((#Max-Chars)) (most common character, anagram, any repeated characters)
 * [Palindromes](#Palindromes)
 * [Reverse Int](#Reverse-Int)
 * [Reverse String](#Reverse-String)
 
+### Chunk
+* Solution 1: Using a FOR-OF loop
+  * Create empty array to hold chunks called 'chunked'
+  * For each element in the 'unchunked' array (FOR-OF loop):
+    * Retrieve the last element in 'chunked'
+    * If the last element does not exist, or if its length is equal to chunk size -> push a new chunk into 'chunked' with the current element
+    * Else add the current element into the chunk
+* Solution 2: Using the slice() function and a WHILE loop
+  * The slice function exists for all arrays. Can pass in a start index and an end index as arguments
+    * e.g. ```letters.slice(0, 3);```
+    * Gives a COPY of every element inside of 'letters' from element 0 to element 3 (but NOT including element 3)
+  * Create empty 'chunked' array
+  * Create 'index' which starts at 0
+  * While index is less than array.length (WHILE LOOP)
+    * Push a slice of length 'size' from 'array' into 'chunked'
+    * Add 'size' to 'index'
+  
 ### Fizzbuzz
 * Requires use of a for-loop, and if-else statements
 * Remember to start the for loop with ```let i = 1``` and ```i <= n```
