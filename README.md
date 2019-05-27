@@ -56,7 +56,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * Check whether both strings are equal
 
 ### Capitalize
-* 1. Using the string standard library
+* 1: Using the string standard library
   * Make an empty array 'words'
   * Split the string input by spaces to get an array ```str.split(" ")```
   * For each word in the array (FOR-OF loop)
@@ -64,7 +64,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
     * Join first letter with the rest of the string
     * Push result into 'words' array
   * Join 'words' into a string and return it ```return words.join(" ");```
-* 2. Using a basic FOR loop
+* 2: Using a basic FOR loop
   * Create 'result' which is the first character of the input string capitalised
   * For each character in the string:
     * IF the character to the left is a space
@@ -73,13 +73,13 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
       * Add it to result
 
 ### Chunk
-* Solution 1: Using a FOR-OF loop
+* 1: Using a FOR-OF loop
   * Create empty array to hold chunks called 'chunked'
   * For each element in the 'unchunked' array (FOR-OF loop):
     * Retrieve the last element in 'chunked'
     * If the last element does not exist, or if its length is equal to chunk size -> push a new chunk into 'chunked' with the current element
     * Else add the current element into the chunk
-* Solution 2: Using the slice() function and a WHILE loop
+* 2: Using the slice() function and a WHILE loop
   * The slice function exists for all arrays. Can pass in a start index and an end index as arguments
     * e.g. ```letters.slice(0, 3);```
     * Gives a COPY of every element inside of 'letters' from element 0 to element 3 (but NOT including element 3)
