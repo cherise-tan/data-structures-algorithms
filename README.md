@@ -23,6 +23,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 * [Palindromes](#Palindromes)
 * [Reverse Int](#Reverse-Int)
 * [Reverse String](#Reverse-String)
+* [Steps](#Steps)
 
 ### General
 * RegExp (Regular Expressions)
@@ -39,6 +40,22 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * ```string.slice(beginIndex, endIndex)``` -> nb 'endIndex' is optional
   * ```string[0]``` will show only the FIRST character in the string
   * ```string.slice(1)``` will show only the characters from position ONE onwards
+* Recursion
+  * Recursion is re-calling a function from within itself
+  * Give reasonable defaults to the info, to avoid an infinite loop of the user doesn't provide the required information ```dec = 1```
+  * Need to identify a base case: the case in which we determine there is no more work to do and it is time to stop the recursion process
+  * Then perform the actions we want to perform
+  * Then call our function again (this is the recursion step). It is critical to make sure we have changed the arguments in some fashion -> careful not to end up in an infinite loop
+  * Recursion Example:
+    ```
+    function printNumber(n, dec = 1){
+      if (n === 0) { // This is the base case
+        return;
+      }
+      console.log(n);
+      printNumber(n - dec);
+    }
+    ```
 
 ### Anagrams
 * 1: Use character maps
@@ -132,3 +149,20 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 * Use an array reverse() helper
   * Convert the string into an array
   * Use the reduce() helper
+
+### Steps
+* 1: Iterative solution
+  * From 0 to n:
+    * Create an empty string "stair"
+    * From 0 to n:
+      * IF the current column is <= to the current row
+        * Add a "#" to "stair"
+      * ELSE
+        * Add a space to "stair"
+    * Console.log "stair"
+* 2: Recursive solution
+  * If row === n, then we have hit the end of our problem
+  * If the 'stair' string has a length === n, then we are at the end of a row
+    * Console.log 'stair', and call the function again
+  * If the length of the stair string is <= to the row number, we add a "#". Otherwise we add a " "
+  * Then need to call the function again
