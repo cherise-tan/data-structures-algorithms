@@ -25,6 +25,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 * [Reverse Int](#Reverse-Int)
 * [Reverse String](#Reverse-String)
 * [Steps](#Steps)
+* [Vowels](#Vowels)
 
 ### General
 * RegExp (Regular Expressions)
@@ -57,6 +58,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
       printNumber(n - dec);
     }
     ```
+* The .includes() function can be used to check if a string or array includes certain characters
 
 ### Anagrams
 * 1: Use character maps
@@ -184,3 +186,17 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
     * Console.log 'stair', and call the function again
   * If the length of the stair string is <= to the row number, we add a "#". Otherwise we add a " "
   * Then need to call the function again
+
+### Vowels
+* Iterative solution
+  * Change the string to lowercase, so both upper and lower case characters can be considered vowels
+  * Use the .includes() function to check if a string or array includes certain characters
+* Recursive solution
+  * Use the match() method on the string -> checks if "x" is included inside the string
+  * Can pass in a regular expression as "x"
+    * ```const matches = str.match(/[aeiou]/gi)```
+    * This will check whether anything within the square brackets [] is included in the string
+    * /g indicates that we won't stop after the first match is found (allows to detect multiple matches)
+    * /i stands for 'insensitive' (i.e. case insensitive) -> will work on upper and lower case vowels
+  * Then need to evaluate whether "matches" is an array (i.e. matches were found), or null (no matches found)
+    * ```return matches ? matches.length : 0;```
