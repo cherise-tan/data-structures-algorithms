@@ -30,7 +30,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 * [Steps](#Steps)
 * [Vowels](#Vowels)
 
-### General
+### Notes
 * Getting keys out of an object (obj):
   * ```Object.keys(obj);```
   * To get the number of keys in an object: ```Object.keys(obj).length;```
@@ -130,6 +130,31 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
     * Set "result" to perform "fn" (i.e. the function that is passed to "memoisation")
       * Note need to use the helper .apply() when calling a function with an array of arguments
     * Then store "result" within our "cache" object
+
+#### Data Structures
+* Data structures are ways of organising information about optimal 'runtime complexity' for adding or removing records
+* JavaScript natively implements several data structures.
+* You will still be asked about 'inferior' data structures
+
+##### Class/Constructor Methods
+* If we define a function called constructor() inside of a class, that constructor() function will automatically be called when creating a new instance of that class
+
+##### The Queue
+* A queue can be thought about as a container, where records (pieces of data) enter on one end, and then exit on the other
+* Why use a queue?
+  * Using the queue as an array may decrease its performance -> making it a queue means that it can't accidentally be used as an array
+* Queue's follow a FIRST-IN-FIRST-OUT principle (FIFO): i.e. the order in which records enter the queue is the order in which they exit the queue
+  * ENQUEUING/ADDING: the process of adding a record to the queue
+    * array equivalent: array.unshift(); -> adds data to the start of an array
+  * DEQUEING/REMOVING: the process of a record exiting the queue at the other end  
+    * array equivalent: array.pop(); -> removes data from the end of an array
+* A queue really has a very small part of an array's functionality -> a queue is not natively implemented and needs to be set up
+* In order to implement a queue:
+  * Make a "Queue" CLASS
+  * Inside of that class, initialise an empty array
+    * An array has multiple different methods: including shift/unshift/push/pop/splice/slice
+  * To make it clear that it is a QUEUE, need to restrict the functionality of that array
+    * Only want "unshift" (add) and "pop" (remove) to be accessible; want to hide all the other functionality
 
 ## Anagrams
 * 1: Use character maps
@@ -256,7 +281,27 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * Use midpoint and the length of the string to determine whether 'add' should equal "#" or " "
 
 ## Queue
-
+* Creating a Queue data structure/API, which will have the following functionality:
+  * Create a new empty queue: ```const q = new Queue();```
+  * Add a record to a queue: ```q.add(1);```
+  * Remove a record at the end of a queue: ```q.remove();```
+* Create a 'Queue' class
+  * Create a constructor() method
+    * Inside this method, initialise an array and assign it as a property to the instance of the queue that is created
+  * Define our desired methods: add() and pop()
+  ```
+  class Queue {
+    constructor(){
+      this.data = [];
+    }
+    add(record){
+      this.data.unshift(record);
+    }
+    remove(){
+      return this.data.pop();
+    }
+  }
+  ```    
 
 ## Reverse Int
 * Change the int to a string, then reverse the string, then change the string back into an int
