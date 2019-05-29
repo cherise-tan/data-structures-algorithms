@@ -19,6 +19,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 * [Capitalize](#Capitalize)
 * [Chunk](#Chunk) (array chunking)
 * [Fizzbuzz](#Fizzbuzz)
+* [Matrix](#Matrix) (spiral matrix)
 * [Max Chars]((#Max-Chars)) (most common character, anagram, any repeated characters)
 * [Palindromes](#Palindromes)
 * [Pyramid](#Pyramid)
@@ -28,11 +29,6 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 * [Vowels](#Vowels)
 
 ### General
-* RegExp (Regular Expressions)
-  * The RegExp constructor creates a regular expression object for matching text with a pattern
-  * They can be used to manipulate strings very easily -> \v matches any alphanumeric character (disregards punctuation/spaces)
-  * ```word.replace(/[^\w]/g, "")``` will replace any other characters found in 'word' with an empty string
-* ```word.toLowerCase()``` will change all characters to lowercase
 * Getting keys out of an object (obj):
   * ```Object.keys(obj);```
   * To get the number of keys in an object: ```Object.keys(obj).length;```
@@ -42,7 +38,15 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * ```string.slice(beginIndex, endIndex)``` -> nb 'endIndex' is optional
   * ```string[0]``` will show only the FIRST character in the string
   * ```string.slice(1)``` will show only the characters from position ONE onwards
-* Recursion
+* The .includes() function can be used to check if a string or array includes certain characters
+* ```word.toLowerCase()``` will change all characters to lowercase
+
+#### RegExp (Regular Expressions)
+  * The RegExp constructor creates a regular expression object for matching text with a pattern
+  * They can be used to manipulate strings very easily -> \v matches any alphanumeric character (disregards punctuation/spaces)
+  * ```word.replace(/[^\w]/g, "")``` will replace any other characters found in 'word' with an empty string
+
+#### Recursion
   * Recursion is re-calling a function from within itself
   * Give reasonable defaults to the info, to avoid an infinite loop of the user doesn't provide the required information ```dec = 1```
   * Need to identify a base case: the case in which we determine there is no more work to do and it is time to stop the recursion process
@@ -58,7 +62,9 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
       printNumber(n - dec);
     }
     ```
-* The .includes() function can be used to check if a string or array includes certain characters
+
+#### Runtime Complexity
+
 
 ### Anagrams
 * 1: Use character maps
@@ -112,6 +118,22 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 ### Fizzbuzz
 * Requires use of a for-loop, and if-else statements
 * Remember to start the for loop with ```let i = 1``` and ```i <= n```
+
+### Matrix
+* The problem: want to create a 2d array (i.e. an array of array)
+* Create an empty array of arrays called "results"
+* Create a counter variable, starting at "1"
+* Define starting and ending counters for column and row
+* As long as (start column <= end column) AND (start row <= end row) -> WHILE LOOP
+  * Loop from start column to end column (top row)
+    * At results[start_row] [i] assign counter variable
+    * Increment counter
+  * Increment start row
+  * Loop from start row to end row (right column)
+    * At results[i] [end_column] assign counter variable
+    * Increment counter
+  * Decrement end row
+  * ...Repeat for the other two sides (bottom row and left column)
 
 ### Max Chars
 * Use this technique for the following questions:
