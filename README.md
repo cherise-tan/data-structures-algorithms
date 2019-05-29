@@ -24,6 +24,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 * [Max Chars]((#Max-Chars)) (most common character, anagram, any repeated characters)
 * [Palindromes](#Palindromes)
 * [Pyramid](#Pyramid)
+* [Queue](#Queue)
 * [Reverse Int](#Reverse-Int)
 * [Reverse String](#Reverse-String)
 * [Steps](#Steps)
@@ -103,6 +104,33 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 * Space Complexity
   * How much more memory is required by doubling the problem set?
 
+#### Memoisation
+* Stores the arguments of each function call along with the result
+* If the function is called again with the same arguments, return the precomputed result rather than running the function again
+* Generic memoisation function which will work pretty much anywhere (see fib/fibonacci for an example)
+  ```
+  function memoise(fn){
+    const cache = {};
+    return function(...args){
+      if (cache[args]){
+        return cache[args];
+      }
+      const result = fn.apply(this, args);
+      cache[args] = result;
+
+      return result;
+    };
+  }
+  ```
+  * First declare a storage area which will record all the arguments that are used to call the function, and the respective result from all those function calls (declare this as an object -> "cache")
+  * "function(...args)" indicates that a function could be called with any number of arguments
+  * Then check if the function has ever been called with this particular set of arguments before
+    * If so -> return the cached answer
+  * If not, need to perform the function and cache the result in "cache"
+    * Set "result" to perform "fn" (i.e. the function that is passed to "memoisation")
+      * Note need to use the helper .apply() when calling a function with an array of arguments
+    * Then store "result" within our "cache" object
+
 ## Anagrams
 * 1: Use character maps
   * Build character maps (can write an external helper function so you don't need to repeat code for strings A + B)
@@ -162,6 +190,11 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * Firstly if 'n' is 0 or 1, the answer will be '0' or '1'
   * Then keep reducing down the fib() function, until you end up adding a series of '1's
     * ```return fib(n-1) + fib(n-2);```
+* Recursive solution -> MEMOISED
+  * The recursive solution has an EXPONENTIAL runtime complexity -> runtime can be dramatically improved using MEMOISATION
+  * Do this by passing the slow version of fibonacci into a memoisation function, which will return a fast memoised version of fibonacci
+  * Then assign 'fib' to the memoisation function calling the fibonacci function: ```const fib = memoize(slowFib);```
+    * Note that 'fib' is exported in our module.exports (allows test.js to run)
 
 ## Fizzbuzz
 * Requires use of a for-loop, and if-else statements
@@ -221,6 +254,9 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * Calculate the midpoint of our row
   * Define a temporary variable 'add' - which will contain the character we are adding to our "level" string
   * Use midpoint and the length of the string to determine whether 'add' should equal "#" or " "
+
+## Queue
+
 
 ## Reverse Int
 * Change the int to a string, then reverse the string, then change the string back into an int
