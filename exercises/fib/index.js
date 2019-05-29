@@ -11,18 +11,27 @@
 //   fib(4) === 3
 
 // Iterative solution
-function fib(n) {
-  const result = [0, 1];
+// function fib(n) {
+//   const result = [0, 1];
+//
+//   for (i = 2; i <= n; i++){
+//     const a = result[i - 1];
+//     const b = result[i - 2];
+//
+//     result.push(a + b);
+//   }
+//   return result[n];
+// }
 
-  for (i = 2; i <= n; i++){
-    const a = result[i - 1];
-    const b = result[i - 2];
-
-    result.push(a + b);
+// Recursive solution
+function fib(n, count = 0, result = [0, 1]) {
+  // if 'n' is 0 or 1, the answer will be '0' or '1'
+  if (n < 2){
+    return n;
   }
-  return result[n];
+  // keep reducing down the fib() function, until you end up adding a series of '1's
+  return fib(n-1) + fib(n-2);
 }
-
 
 
 module.exports = fib;

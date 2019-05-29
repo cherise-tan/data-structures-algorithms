@@ -18,6 +18,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 * [Anagrams](#Anagrams)
 * [Capitalize](#Capitalize)
 * [Chunk](#Chunk) (array chunking)
+* [Fibonacci](#Fibonacci)
 * [Fizzbuzz](#Fizzbuzz)
 * [Matrix](#Matrix) (spiral matrix)
 * [Max Chars]((#Max-Chars)) (most common character, anagram, any repeated characters)
@@ -150,6 +151,17 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * While index is less than array.length (WHILE LOOP)
     * Push a slice of length 'size' from 'array' into 'chunked'
     * Add 'size' to 'index'
+
+## Fibonacci
+* Iterative solution:
+  * Set an array 'result', and set it equal to [0,1] (as we cannot generate first two numbers in loop)
+  * Create a for-loop (starting at position 3) to calculate the next number to push to the array
+  * Then return the 'result' at position 'n'
+* Recursive solution
+  * This is a solution that is typically memorised
+  * Firstly if 'n' is 0 or 1, the answer will be '0' or '1'
+  * Then keep reducing down the fib() function, until you end up adding a series of '1's
+    * ```return fib(n-1) + fib(n-2);```
 
 ## Fizzbuzz
 * Requires use of a for-loop, and if-else statements
