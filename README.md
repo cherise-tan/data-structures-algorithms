@@ -42,31 +42,67 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 * ```word.toLowerCase()``` will change all characters to lowercase
 
 #### RegExp (Regular Expressions)
-  * The RegExp constructor creates a regular expression object for matching text with a pattern
-  * They can be used to manipulate strings very easily -> \v matches any alphanumeric character (disregards punctuation/spaces)
-  * ```word.replace(/[^\w]/g, "")``` will replace any other characters found in 'word' with an empty string
+* The RegExp constructor creates a regular expression object for matching text with a pattern
+* They can be used to manipulate strings very easily -> \v matches any alphanumeric character (disregards punctuation/spaces)
+* ```word.replace(/[^\w]/g, "")``` will replace any other characters found in 'word' with an empty string
 
 #### Recursion
-  * Recursion is re-calling a function from within itself
-  * Give reasonable defaults to the info, to avoid an infinite loop of the user doesn't provide the required information ```dec = 1```
-  * Need to identify a base case: the case in which we determine there is no more work to do and it is time to stop the recursion process
-  * Then perform the actions we want to perform
-  * Then call our function again (this is the recursion step). It is critical to make sure we have changed the arguments in some fashion -> careful not to end up in an infinite loop
-  * Recursion Example:
-    ```
-    function printNumber(n, dec = 1){
-      if (n === 0) { // This is the base case
-        return;
-      }
-      console.log(n);
-      printNumber(n - dec);
+* Recursion is re-calling a function from within itself
+* Give reasonable defaults to the info, to avoid an infinite loop of the user doesn't provide the required information ```dec = 1```
+* Need to identify a base case: the case in which we determine there is no more work to do and it is time to stop the recursion process
+* Then perform the actions we want to perform
+* Then call our function again (this is the recursion step). It is critical to make sure we have changed the arguments in some fashion -> careful not to end up in an infinite loop
+* Recursion Example:
+  ```
+  function printNumber(n, dec = 1){
+    if (n === 0) { // This is the base case
+      return;
     }
-    ```
+    console.log(n);
+    printNumber(n - dec);
+  }
+  ```
 
 #### Runtime Complexity
+* Runtime complexity describes the performance of an algorithm, and can be used to compare different solutions to a given problem
+  * Really asking: "How much more processing time/power is required to run your algorithm if we double the inputs"
 
+* Types of runtimes:
+  * Constant time (1): takes the same amount of time regardless of the number of elements worked with
+  * Logarithmic time (log(n)): You have this if doubling the number of elements you are iterating over doesn't double the amount of work
+    * Assume that all searching operations are log(n)
+  * Linear time (n): iterating through all elements in a collection of data. If you see a for-loop spanning from "0" to "array.length", it is probably linear runtime
+    * E.g. String reversal -> iterative solution (for-loop): For each character that is added to the string, one further iteration through the loop is required
+  * Quasilinear time (n*log(n)): you have this if doubling the number of elements doesn't double the amount of work
+    * Always assume that any sorting operation is n*log(n)
+  * Quadratic time (n^2): every element in a collection has to be compared to every other element.
+    * E.g. Steps algorithm -> iterative solution with nested for-loop
+  * Exponential time (2^n): if you add a single element to a collection, the processing power required doubles
 
-### Anagrams
+* Big 'O' Notation
+  * This is another way of referencing runtime complexity
+    * O(n): Linear
+    * O(1): Constant
+    * O(n^2): Quadratic
+
+* Tips for identifying Runtime Complexity
+  * Iterating with a simple for loop through a single collection?
+    * Probably O(n)
+  * Iterating through half a collection?
+    * Still O(n). There are no constants in runtime
+  * Iterating through two 'different' collections with separate for-loops?
+    * O(n + m)
+  * Two nested for-loops iterating over the same collection?
+    * O(n^2)
+  * Two nested for loops iterating over different collections?
+    * O(n*m)
+  * Sorting?
+    * O(n*log(n))
+
+* Space Complexity
+  * How much more memory is required by doubling the problem set?
+
+## Anagrams
 * 1: Use character maps
   * Build character maps (can write an external helper function so you don't need to repeat code for strings A + B)
     * Remove white space/punctuation using Regular Expressions ```word.replace(/[^\w]/g, "")```
@@ -81,7 +117,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
     * Change string to array, perform sort() function, then change back to a string
   * Check whether both strings are equal
 
-### Capitalize
+## Capitalize
 * 1: Using the string standard library
   * Make an empty array 'words'
   * Split the string input by spaces to get an array ```str.split(" ")```
@@ -98,7 +134,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
     * ELSE
       * Add it to result
 
-### Chunk
+## Chunk
 * 1: Using a FOR-OF loop
   * Create empty array to hold chunks called 'chunked'
   * For each element in the 'unchunked' array (FOR-OF loop):
@@ -115,11 +151,11 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
     * Push a slice of length 'size' from 'array' into 'chunked'
     * Add 'size' to 'index'
 
-### Fizzbuzz
+## Fizzbuzz
 * Requires use of a for-loop, and if-else statements
 * Remember to start the for loop with ```let i = 1``` and ```i <= n```
 
-### Matrix
+## Matrix
 * The problem: want to create a 2d array (i.e. an array of array)
 * Create an empty array of arrays called "results"
 * Create a counter variable, starting at "1"
@@ -135,7 +171,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * Decrement end row
   * ...Repeat for the other two sides (bottom row and left column)
 
-### Max Chars
+## Max Chars
 * Use this technique for the following questions:
   * What is the most common character in the string?
   * Does string A have the same characters as string B (is it an anagram)?
@@ -148,7 +184,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * Then need to iterate through the object to find the character that has been used the most -> using a FOR-IN loop
     * Set max-number and the associated character as variables as we loop through the object
 
-### Palindromes
+## Palindromes
 * Reverse the string and then compare input and output
   * Test if input string is equal to output string: ```return str === reversed;``` (doesn't need an if statement)
 * Use the array every() helper function
@@ -157,7 +193,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * Compare each element (at position "i") to the element at position ```array.length -i -1```
     * NB: "-1" accounts for array starting at position 0)
 
-### Pyramid
+## Pyramid
 * Iterative solution:
   * Calculate the midpoint of the row (will be used to decide where "#" goes)
     * Use Math.floor() to take a decimel number and round it down to the nearest integer
@@ -174,12 +210,12 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * Define a temporary variable 'add' - which will contain the character we are adding to our "level" string
   * Use midpoint and the length of the string to determine whether 'add' should equal "#" or " "
 
-### Reverse Int
+## Reverse Int
 * Change the int to a string, then reverse the string, then change the string back into an int
 * Use Math.sign() to maintain negative/positive numbers
   * Returns +1 if number is positive, and -1 if number is negative
 
-### Reverse String
+## Reverse String
 * Use the array reverse() helper function to reverse places in an array
   * Convert the string into an array
   * Call 'reverse' method on the array
@@ -192,7 +228,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * Convert the string into an array
   * Use the reduce() helper
 
-### Steps
+## Steps
 * 1: Iterative solution
   * From 0 to n:
     * Create an empty string "stair"
@@ -209,7 +245,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * If the length of the stair string is <= to the row number, we add a "#". Otherwise we add a " "
   * Then need to call the function again
 
-### Vowels
+## Vowels
 * Iterative solution
   * Change the string to lowercase, so both upper and lower case characters can be considered vowels
   * Use the .includes() function to check if a string or array includes certain characters
