@@ -21,6 +21,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 * [Fizzbuzz](#Fizzbuzz)
 * [Max Chars]((#Max-Chars)) (most common character, anagram, any repeated characters)
 * [Palindromes](#Palindromes)
+* [Pyramid](#Pyramid)
 * [Reverse Int](#Reverse-Int)
 * [Reverse String](#Reverse-String)
 * [Steps](#Steps)
@@ -131,6 +132,23 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
   * The every() function does a boolean check on every element within an array
   * Compare each element (at position "i") to the element at position ```array.length -i -1```
     * NB: "-1" accounts for array starting at position 0)
+
+### Pyramid
+* Iterative solution:
+  * Calculate the midpoint of the row (will be used to decide where "#" goes)
+    * Use Math.floor() to take a decimel number and round it down to the nearest integer
+  * From 0 to n (iterate through rows)
+    * Create an empty string "level"
+    * From 0 to ??? (number of columns)
+      * Check if column is within the range of midpoint +/- row
+        * IF the column is within this range -> add a "#" to "level"
+        * ELSE add a space to "level"
+    * Console log "level"
+* Recursive solution:
+  * See [steps](#Steps) for set-up for recursive solution
+  * Calculate the midpoint of our row
+  * Define a temporary variable 'add' - which will contain the character we are adding to our "level" string
+  * Use midpoint and the length of the string to determine whether 'add' should equal "#" or " "
 
 ### Reverse Int
 * Change the int to a string, then reverse the string, then change the string back into an int

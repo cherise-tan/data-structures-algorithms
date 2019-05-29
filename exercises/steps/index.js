@@ -20,19 +20,19 @@
 //       '####'
 
 // Iterative solution
-// function steps(n) {
-//   for (let row = 1; row <= n; row++) {
-//     let answer = "";
-//     for (let col = 1; col <= n; col++) {
-//       if (col <= row){
-//         answer += "#";
-//       } else {
-//         answer += " ";
-//       }
-//     }
-//     console.log(answer);
-//   }
-// }
+function steps(n) {
+  for (let row = 1; row <= n; row++) {
+    let answer = "";
+    for (let col = 1; col <= n; col++) {
+      if (col <= row){
+        answer += "#";
+      } else {
+        answer += " ";
+      }
+    }
+    console.log(answer);
+  }
+}
 
 // Recursion solution -> set default value of row to be 0 (i.e. the first row), and stair to be an empty string
 function steps(n, row = 0, stair = "") {
