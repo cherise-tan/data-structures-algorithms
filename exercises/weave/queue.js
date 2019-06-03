@@ -1,3 +1,5 @@
+// jshint esversion:6
+
 // --- Directions
 // Implement a 'peek' method in this Queue class.
 // Peek should return the last element (the next

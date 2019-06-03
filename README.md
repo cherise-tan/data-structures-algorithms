@@ -29,6 +29,7 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
 * [Reverse String](#Reverse-String)
 * [Steps](#Steps)
 * [Vowels](#Vowels)
+* [Weave](#Weave)
 
 ### Notes
 * Getting keys out of an object (obj):
@@ -351,3 +352,5 @@ Learning JavaScript Data Structures and Algorithms alongside a [Udemy](https://w
     * /i stands for 'insensitive' (i.e. case insensitive) -> will work on upper and lower case vowels
   * Then need to evaluate whether "matches" is an array (i.e. matches were found), or null (no matches found)
     * ```return matches ? matches.length : 0;```
+
+## Weave
